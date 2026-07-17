@@ -1,0 +1,124 @@
+{
+  "name": "KFED AI Entrepreneur Advisor (Falcon Systems)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kfed-advisor",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "1a1a1a1a-0001-4a4a-8a8a-000000000001",
+      "name": "Webhook - Beneficiary Message",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-40, 300],
+      "webhookId": "kfed-advisor-inbound"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8420/api/chat",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"beneficiary_id\": $json.body.beneficiary_id || \"GUEST\", \"message\": $json.body.message } }}",
+        "options": {}
+      },
+      "id": "1a1a1a1a-0002-4a4a-8a8a-000000000002",
+      "name": "Run Multi-Agent Pipeline (Profiler+RAG+Recommender+Tracker)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [200, 300],
+      "notes": "Calls the Python backend (backend/app.py) which runs the 5-agent pipeline: Profiler -> Escalation -> Retriever(RAG over kb/programs.json) -> Recommender -> Progress Tracker. Swap the URL to your hosted backend for a real deployment."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "loose"},
+          "conditions": [
+            {
+              "id": "esc-cond-1",
+              "leftValue": "={{ $json.escalation }}",
+              "rightValue": "",
+              "operator": {"type": "object", "operation": "notEmpty"}
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "1a1a1a1a-0003-4a4a-8a8a-000000000003",
+      "name": "IF Escalation Triggered? (Human-in-the-Loop)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "notify-1",
+              "name": "advisor_notification",
+              "type": "string",
+              "value": "=🚨 KFED case escalated ({{$json.escalation.reason_code}}, urgency: {{$json.escalation.urgency}})\\nBeneficiary: {{$json.escalation.beneficiary_id}}\\nReason: {{$json.escalation.reason_text}}\\nProfile: sector={{$json.escalation.profile_snapshot.sector}}, stage={{$json.escalation.profile_snapshot.stage}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1a1a1a1a-0004-4a4a-8a8a-000000000004",
+      "name": "Compose Human Advisor Handoff Summary",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [700, 180],
+      "notes": "Replace the downstream connection with a real Slack/Email/Teams node using this composed summary to actually page a KFED advisor. Left as a Set node here so the workflow imports cleanly without requiring Slack/Email credentials."
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"reply\": $json.reply, \"language\": $json.language, \"pathway\": $json.pathway, \"escalated\": true, \"advisor_notification\": $node[\"Compose Human Advisor Handoff Summary\"].json.advisor_notification } }}",
+        "options": {}
+      },
+      "id": "1a1a1a1a-0005-4a4a-8a8a-000000000005",
+      "name": "Respond (Escalated)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [940, 180]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"reply\": $json.reply, \"language\": $json.language, \"pathway\": $json.pathway, \"alerts\": $json.alerts, \"escalated\": false } }}",
+        "options": {}
+      },
+      "id": "1a1a1a1a-0006-4a4a-8a8a-000000000006",
+      "name": "Respond (Normal)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [700, 420]
+    }
+  ],
+  "connections": {
+    "Webhook - Beneficiary Message": {
+      "main": [[{"node": "Run Multi-Agent Pipeline (Profiler+RAG+Recommender+Tracker)", "type": "main", "index": 0}]]
+    },
+    "Run Multi-Agent Pipeline (Profiler+RAG+Recommender+Tracker)": {
+      "main": [[{"node": "IF Escalation Triggered? (Human-in-the-Loop)", "type": "main", "index": 0}]]
+    },
+    "IF Escalation Triggered? (Human-in-the-Loop)": {
+      "main": [
+        [{"node": "Compose Human Advisor Handoff Summary", "type": "main", "index": 0}],
+        [{"node": "Respond (Normal)", "type": "main", "index": 0}]
+      ]
+    },
+    "Compose Human Advisor Handoff Summary": {
+      "main": [[{"node": "Respond (Escalated)", "type": "main", "index": 0}]]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": "kfed-ai-entrepreneur-advisor"
+  }
+}

@@ -1,0 +1,8 @@
+# No third-party dependencies required — the whole app runs on the Python
+# standard library (http.server, json, re, math). This is intentional: it
+# means the demo works on any machine with Python 3.8+, no internet needed
+# at showcase time.
+#
+# Optional, only if you want live LLM-generated phrasing instead of the
+# template fallback (see backend/llm.py):
+# anthropic>=0.40

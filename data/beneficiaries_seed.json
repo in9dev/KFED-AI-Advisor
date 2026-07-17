@@ -1,0 +1,27 @@
+{
+  "_comment": "Simulates KFED's scattered systems: a CRM profile record + a separate training-history log + separate coaching notes. The ProfilerAgent unifies these into one profile the first time it sees a beneficiary_id.",
+
+  "crm_profiles": {
+    "B-1042": {"name": "Maryam Al Suwaidi", "emirates_id_last4": "3321", "phone": "+9715xxxxx42", "emirate": "Al Ain", "business_name": "Sana Agri Co.", "declared_sector": "agriculture"},
+    "B-2077": {"name": "Rashid Al Mheiri", "emirates_id_last4": "8890", "phone": "+9715xxxxx77", "emirate": "Abu Dhabi", "business_name": "Falcon Fittings Manufacturing", "declared_sector": "manufacturing"}
+  },
+
+  "training_history": {
+    "B-1042": [
+      {"program_id": "capability-building", "completed_on": "2025-11-02", "result": "completed"}
+    ],
+    "B-2077": [
+      {"program_id": "capability-building", "completed_on": "2025-06-15", "result": "completed"},
+      {"program_id": "icv-readiness", "completed_on": "2026-01-20", "result": "in_progress"}
+    ]
+  },
+
+  "coaching_notes": {
+    "B-1042": [
+      {"date": "2025-11-10", "advisor": "H. Al Ameri", "note": "Strong product-market fit for greenhouse produce; needs help with water-efficient infrastructure funding and export contacts."}
+    ],
+    "B-2077": [
+      {"date": "2026-02-01", "advisor": "S. Al Kaabi", "note": "Ready for government procurement contracts once ICV certificate is issued; considering a second production line loan."}
+    ]
+  }
+}

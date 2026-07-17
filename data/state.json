@@ -1,0 +1,871 @@
+{
+  "profiles": {
+    "QUIZ-1": {
+      "beneficiary_id": "QUIZ-1",
+      "language": "ar",
+      "business_name": "مزرعة الواحة",
+      "sector": "agri",
+      "stage": "idea",
+      "skill_gaps": [
+        "funding"
+      ],
+      "context": "عندي بيت محمي صغير وأحتاج تمويل توسع.",
+      "history_unified": true,
+      "crm": null,
+      "training_history": [],
+      "coaching_notes": [],
+      "missing_fields": []
+    },
+    "QUIZ-2": {
+      "beneficiary_id": "QUIZ-2",
+      "language": "en",
+      "business_name": "Falcon Steel Works",
+      "sector": "manufacturing",
+      "stage": "growth",
+      "skill_gaps": [
+        "procurement",
+        "funding"
+      ],
+      "context": "We need a loan of 9 million AED to build a new plant.",
+      "history_unified": true,
+      "crm": null,
+      "training_history": [],
+      "coaching_notes": [],
+      "missing_fields": []
+    },
+    "GUEST-1": {
+      "beneficiary_id": "GUEST-1",
+      "language": "en",
+      "sector": "agri",
+      "stage": "startup",
+      "skill_gaps": [
+        "funding"
+      ],
+      "history_unified": true,
+      "crm": null,
+      "training_history": [],
+      "coaching_notes": [],
+      "missing_fields": []
+    },
+    "B-1042": {
+      "beneficiary_id": "B-1042",
+      "language": "ar",
+      "sector": "agri",
+      "stage": "growth",
+      "skill_gaps": [
+        "funding",
+        "export"
+      ],
+      "history_unified": true,
+      "crm": {
+        "name": "Maryam Al Suwaidi",
+        "emirates_id_last4": "3321",
+        "phone": "+9715xxxxx42",
+        "emirate": "Al Ain",
+        "business_name": "Sana Agri Co.",
+        "declared_sector": "agriculture"
+      },
+      "training_history": [
+        {
+          "program_id": "capability-building",
+          "completed_on": "2025-11-02",
+          "result": "completed"
+        }
+      ],
+      "coaching_notes": [
+        {
+          "date": "2025-11-10",
+          "advisor": "H. Al Ameri",
+          "note": "Strong product-market fit for greenhouse produce; needs help with water-efficient infrastructure funding and export contacts."
+        }
+      ],
+      "missing_fields": []
+    },
+    "B-2077": {
+      "beneficiary_id": "B-2077",
+      "language": "en",
+      "sector": "manufacturing",
+      "stage": "startup",
+      "skill_gaps": [
+        "procurement"
+      ],
+      "history_unified": true,
+      "crm": {
+        "name": "Rashid Al Mheiri",
+        "emirates_id_last4": "8890",
+        "phone": "+9715xxxxx77",
+        "emirate": "Abu Dhabi",
+        "business_name": "Falcon Fittings Manufacturing",
+        "declared_sector": "manufacturing"
+      },
+      "training_history": [
+        {
+          "program_id": "capability-building",
+          "completed_on": "2025-06-15",
+          "result": "completed"
+        },
+        {
+          "program_id": "icv-readiness",
+          "completed_on": "2026-01-20",
+          "result": "in_progress"
+        }
+      ],
+      "coaching_notes": [
+        {
+          "date": "2026-02-01",
+          "advisor": "S. Al Kaabi",
+          "note": "Ready for government procurement contracts once ICV certificate is issued; considering a second production line loan."
+        }
+      ],
+      "missing_fields": []
+    },
+    "GUEST-2": {
+      "beneficiary_id": "GUEST-2",
+      "language": "en",
+      "sector": "manufacturing",
+      "stage": "startup",
+      "skill_gaps": [
+        "funding"
+      ],
+      "history_unified": true,
+      "crm": null,
+      "training_history": [],
+      "coaching_notes": [],
+      "missing_fields": []
+    },
+    "GUEST-3": {
+      "beneficiary_id": "GUEST-3",
+      "language": "ar",
+      "sector": "general",
+      "stage": "startup",
+      "skill_gaps": [],
+      "history_unified": true,
+      "crm": null,
+      "training_history": [],
+      "coaching_notes": [],
+      "missing_fields": [
+        "sector",
+        "skill_gaps"
+      ]
+    },
+    "GUEST-4": {
+      "beneficiary_id": "GUEST-4",
+      "language": "en",
+      "sector": "gaming",
+      "stage": "startup",
+      "skill_gaps": [],
+      "history_unified": true,
+      "crm": null,
+      "training_history": [],
+      "coaching_notes": [],
+      "missing_fields": [
+        "skill_gaps"
+      ]
+    },
+    "GUEST": {
+      "beneficiary_id": "GUEST",
+      "language": "en",
+      "business_name": "Falcon systems",
+      "sector": "gaming",
+      "stage": "youth",
+      "skill_gaps": [
+        "ai_skills",
+        "marketing"
+      ],
+      "context": "Im not skilled",
+      "history_unified": true,
+      "crm": null,
+      "training_history": [],
+      "coaching_notes": [],
+      "missing_fields": []
+    }
+  },
+  "pathways": {
+    "QUIZ-1": [
+      {
+        "program_id": "ruwad-al-ain-bootcamp",
+        "name_en": "Ruwad Al Ain Bootcamp",
+        "name_ar": "معسكر رواد العين",
+        "category": "bootcamp",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.7422,
+        "description_en": "An intensive 5-day bootcamp led by Khalifa Fund with ADGM Academy at MZN Hub Al Ain, equipping UAE Nationals with entrepreneurial mindset, practical skills (team building, business modelling, prototyping, pitching), and access to mentors and sector experts. Focused on four priority sectors: agritech, light manufacturing, AI & cybersecurity, and culture & tourism. Winning teams get 6 months of 1:1 mentorship and accelerated entry into the Khalifa Fund Entrepreneurship Competition.",
+        "description_ar": "معسكر مكثف مدته 5 أيام يقوده صندوق خليفة بالتعاون مع أكاديمية سوق أبوظبي العالمي في مركز MZN بالعين، يزوّد المواطنين بعقلية ريادية ومهارات عملية (بناء الفرق، نمذجة الأعمال، النماذج الأولية، العرض التقديمي)، والوصول إلى موجهين وخبراء قطاعيين. يركز على أربعة قطاعات ذات أولوية: التقنية الزراعية، التصنيع الخفيف، الذكاء الاصطناعي والأمن السيبراني، والثقافة والسياحة. تحصل الفرق الفائزة على 6 أشهر من الإرشاد الفردي ودخول مباشر إلى مسابقة ريادة الأعمال.",
+        "url": "https://www.mediaoffice.abudhabi/en/economy/khalifa-fund-for-enterprise-development-and-adgm-academy-host-ruwad-al-ain-bootcamp-2026/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "future-entrepreneur",
+        "name_en": "Future Entrepreneur Programme",
+        "name_ar": "برنامج رائد الأعمال المستقبلي",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.4219,
+        "description_en": "Free customised learning pathways for Emirati youth aged 4-18 to build entrepreneurship, innovation, and financial literacy skills through practical, interactive activities. Runs as a summer programme (2026 edition).",
+        "description_ar": "مسارات تعليمية مخصصة ومجانية لشباب إماراتي بين 4 و18 عامًا لبناء مهارات ريادة الأعمال والابتكار والثقافة المالية من خلال أنشطة عملية وتفاعلية. يقام كبرنامج صيفي (نسخة 2026).",
+        "url": "https://www.khalifafund.ae/program-initiatives/young-entrepreneurship-program-2026/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "capability-building",
+        "name_en": "Capability Building (Mentorship & Training)",
+        "name_ar": "بناء القدرات (الإرشاد والتدريب)",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.4188,
+        "description_en": "Khalifa Fund's core training and mentorship service. Tailored entrepreneurship courses covering business setup, management, finance, marketing, and technology, plus 1:1 mentorship and consultancy for strategy and growth. Available to potential entrepreneurs and existing SMEs at any stage.",
+        "description_ar": "الخدمة الأساسية للتدريب والإرشاد من صندوق خليفة. دورات تدريبية مخصصة في ريادة الأعمال تغطي تأسيس الأعمال والإدارة والتمويل والتسويق والتقنية، بالإضافة إلى إرشاد استشاري فردي للاستراتيجية والنمو. متاحة لرواد الأعمال المحتملين والمنشآت الصغيرة والمتوسطة القائمة في أي مرحلة.",
+        "url": "https://www.khalifafund.ae/services/capability-building/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "funding-scheme",
+        "name_en": "Funding Scheme (Microfinance, Small, Expansion & Working Capital Loans)",
+        "name_ar": "برنامج التمويل (تمويل أصغر، تمويل صغير، تمويل توسع ورأس مال عامل)",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.9536,
+        "description_en": "Khalifa Fund's suite of loan products: Microfinance Loan (up to AED 500K, projects up to AED 1M, 80% cost coverage, up to 60-month repayment), Small Loan (up to AED 1-2M for growing micro/small enterprises), Expansion Loan (up to AED 2-3M for established SMEs ready to scale), plus specialised Agri funds (Pack House/Net House/Water Management), Operating Capital financing, vehicle/equipment financing, bill discounting, and e-commerce inventory financing. Emirati entrepreneurs aged 21-60 with businesses in Abu Dhabi and the Western Region can apply across Healthcare, Education, Agriculture, ICT, Tourism, Manufacturing and other sectors.",
+        "description_ar": "مجموعة منتجات التمويل من صندوق خليفة: التمويل الأصغر (حتى 500 ألف درهم لمشاريع تصل تكلفتها إلى مليون درهم، بتغطية 80% من التكلفة وسداد حتى 60 شهرًا)، التمويل الصغير (حتى 1-2 مليون درهم للمنشآت الصغيرة النامية)، تمويل التوسع (حتى 2-3 مليون درهم للمنشآت الجاهزة للنمو)، إضافة إلى صناديق زراعية متخصصة وتمويل رأس المال العامل والمركبات والمعدات وخصم الفواتير وتمويل مخزون التجارة الإلكترونية. يمكن للمواطنين الإماراتيين بين 21 و60 عامًا ممن لديهم أعمال في أبوظبي والمنطقة الغربية التقديم عبر قطاعات الصحة والتعليم والزراعة وتقنية المعلومات والسياحة والتصنيع وغيرها.",
+        "url": "https://www.khalifafund.ae/services/funding-scheme/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      }
+    ],
+    "QUIZ-2": [
+      {
+        "program_id": "light-manufacturing-accelerator",
+        "name_en": "Light Manufacturing Accelerator",
+        "name_ar": "مسرّع التصنيع الخفيف",
+        "category": "accelerator",
+        "bucket": "now",
+        "bucket_rank": 1,
+        "relevance_score": 0.7388,
+        "description_en": "End-to-end support connecting entrepreneurs and manufacturers with government entities, industry partners, and specialised clusters: regulatory navigation, supply-chain access, and integration into sector hubs, enabling SME manufacturers to innovate, scale, and compete locally and globally.",
+        "description_ar": "دعم شامل يربط رواد الأعمال والمصنّعين بالجهات الحكومية وشركاء الصناعة والتجمعات المتخصصة: التوجيه التنظيمي، الوصول إلى سلاسل الإمداد، والاندماج في مراكز القطاع، مما يمكّن مصنّعي المنشآت الصغيرة من الابتكار والتوسع والمنافسة محليًا وعالميًا.",
+        "url": "https://www.khalifafund.ae/program-initiatives/light-manufacturing-accelerator/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "funding-scheme",
+        "name_en": "Funding Scheme (Microfinance, Small, Expansion & Working Capital Loans)",
+        "name_ar": "برنامج التمويل (تمويل أصغر، تمويل صغير، تمويل توسع ورأس مال عامل)",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.8785,
+        "description_en": "Khalifa Fund's suite of loan products: Microfinance Loan (up to AED 500K, projects up to AED 1M, 80% cost coverage, up to 60-month repayment), Small Loan (up to AED 1-2M for growing micro/small enterprises), Expansion Loan (up to AED 2-3M for established SMEs ready to scale), plus specialised Agri funds (Pack House/Net House/Water Management), Operating Capital financing, vehicle/equipment financing, bill discounting, and e-commerce inventory financing. Emirati entrepreneurs aged 21-60 with businesses in Abu Dhabi and the Western Region can apply across Healthcare, Education, Agriculture, ICT, Tourism, Manufacturing and other sectors.",
+        "description_ar": "مجموعة منتجات التمويل من صندوق خليفة: التمويل الأصغر (حتى 500 ألف درهم لمشاريع تصل تكلفتها إلى مليون درهم، بتغطية 80% من التكلفة وسداد حتى 60 شهرًا)، التمويل الصغير (حتى 1-2 مليون درهم للمنشآت الصغيرة النامية)، تمويل التوسع (حتى 2-3 مليون درهم للمنشآت الجاهزة للنمو)، إضافة إلى صناديق زراعية متخصصة وتمويل رأس المال العامل والمركبات والمعدات وخصم الفواتير وتمويل مخزون التجارة الإلكترونية. يمكن للمواطنين الإماراتيين بين 21 و60 عامًا ممن لديهم أعمال في أبوظبي والمنطقة الغربية التقديم عبر قطاعات الصحة والتعليم والزراعة وتقنية المعلومات والسياحة والتصنيع وغيرها.",
+        "url": "https://www.khalifafund.ae/services/funding-scheme/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "icv-readiness",
+        "name_en": "ICV Readiness Program",
+        "name_ar": "برنامج الجاهزية للقيمة المضافة المحلية (ICV)",
+        "category": "certification",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.7647,
+        "description_en": "Prepares businesses to obtain In-Country Value (ICV) certification, supporting supply-chain localisation. Helps SMEs meet ICV eligibility criteria and obtain certification, enabling participation in government procurement.",
+        "description_ar": "يهيئ الشركات للحصول على شهادة القيمة المضافة المحلية (ICV)، بما يدعم توطين سلاسل الإمداد. يساعد المنشآت الصغيرة والمتوسطة على استيفاء معايير الأهلية والحصول على الشهادة، مما يتيح المشاركة في المشتريات الحكومية.",
+        "url": "https://www.khalifafund.ae/program-initiatives/icv-readiness-program/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "entrepreneurship-competition",
+        "name_en": "Khalifa Fund Entrepreneurship Competition (2nd Edition)",
+        "name_ar": "مسابقة صندوق خليفة لريادة الأعمال (النسخة الثانية)",
+        "category": "competition",
+        "bucket": "later",
+        "bucket_rank": 3,
+        "relevance_score": 0.771,
+        "description_en": "KFED's flagship competition for MVP-ready, Emirati-owned startups solving real challenges across Abu Dhabi's Falcon Economy sectors. Includes a 3-day intensive bootcamp per city (Abu Dhabi, Al Ain, Al Dhafra), mentorship, and a public pitch at the SKEA Awards. Over AED 1M in prizes and in-kind support across 5 sector winners and 3 innovation awards (AI, Robotics, Sustainability). Non-dilutive, free to apply. Requires: age 18+, Abu Dhabi/Al Ain/Al Dhafra residency, Emirati ownership, working MVP/prototype with pitch deck, scalable business model.",
+        "description_ar": "المسابقة الرائدة لصندوق خليفة للشركات الناشئة الجاهزة بنموذج أولي وذات الملكية الإماراتية، والتي تعالج تحديات حقيقية ضمن قطاعات اقتصاد الصقر في أبوظبي. تشمل معسكرًا مكثفًا لمدة 3 أيام في كل مدينة (أبوظبي، العين، الظفرة)، إرشادًا، وعرضًا علنيًا في جوائز سقيا. أكثر من مليون درهم من الجوائز والدعم العيني عبر 5 فائزين قطاعيين و3 جوائز ابتكار (الذكاء الاصطناعي، الروبوتات، الاستدامة). غير مخفِّفة للملكية ومجانية التقديم. تتطلب: عمر 18+، إقامة في أبوظبي/العين/الظفرة، ملكية إماراتية، نموذج أولي عملي مع عرض تقديمي، ونموذج أعمال قابل للتوسع.",
+        "url": "https://www.khalifafund.ae/program-initiatives/khalifa-entrepreneurship-award/",
+        "key_dates": {
+          "applications_open": "2026-04-01",
+          "applications_close": "2026-06-30",
+          "bootcamp": "2026-06-01 to 2026-06-30",
+          "final_pitch_skea": "2026-07-01 to 2026-07-31",
+          "next_edition_hint": "A new edition typically opens applications the following April."
+        },
+        "milestone_status": "recommended"
+      }
+    ],
+    "GUEST-1": [
+      {
+        "program_id": "ruwad-al-ain-bootcamp",
+        "name_en": "Ruwad Al Ain Bootcamp",
+        "name_ar": "معسكر رواد العين",
+        "category": "bootcamp",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.8171,
+        "description_en": "An intensive 5-day bootcamp led by Khalifa Fund with ADGM Academy at MZN Hub Al Ain, equipping UAE Nationals with entrepreneurial mindset, practical skills (team building, business modelling, prototyping, pitching), and access to mentors and sector experts. Focused on four priority sectors: agritech, light manufacturing, AI & cybersecurity, and culture & tourism. Winning teams get 6 months of 1:1 mentorship and accelerated entry into the Khalifa Fund Entrepreneurship Competition.",
+        "description_ar": "معسكر مكثف مدته 5 أيام يقوده صندوق خليفة بالتعاون مع أكاديمية سوق أبوظبي العالمي في مركز MZN بالعين، يزوّد المواطنين بعقلية ريادية ومهارات عملية (بناء الفرق، نمذجة الأعمال، النماذج الأولية، العرض التقديمي)، والوصول إلى موجهين وخبراء قطاعيين. يركز على أربعة قطاعات ذات أولوية: التقنية الزراعية، التصنيع الخفيف، الذكاء الاصطناعي والأمن السيبراني، والثقافة والسياحة. تحصل الفرق الفائزة على 6 أشهر من الإرشاد الفردي ودخول مباشر إلى مسابقة ريادة الأعمال.",
+        "url": "https://www.mediaoffice.abudhabi/en/economy/khalifa-fund-for-enterprise-development-and-adgm-academy-host-ruwad-al-ain-bootcamp-2026/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "funding-scheme",
+        "name_en": "Funding Scheme (Microfinance, Small, Expansion & Working Capital Loans)",
+        "name_ar": "برنامج التمويل (تمويل أصغر، تمويل صغير، تمويل توسع ورأس مال عامل)",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.8454,
+        "description_en": "Khalifa Fund's suite of loan products: Microfinance Loan (up to AED 500K, projects up to AED 1M, 80% cost coverage, up to 60-month repayment), Small Loan (up to AED 1-2M for growing micro/small enterprises), Expansion Loan (up to AED 2-3M for established SMEs ready to scale), plus specialised Agri funds (Pack House/Net House/Water Management), Operating Capital financing, vehicle/equipment financing, bill discounting, and e-commerce inventory financing. Emirati entrepreneurs aged 21-60 with businesses in Abu Dhabi and the Western Region can apply across Healthcare, Education, Agriculture, ICT, Tourism, Manufacturing and other sectors.",
+        "description_ar": "مجموعة منتجات التمويل من صندوق خليفة: التمويل الأصغر (حتى 500 ألف درهم لمشاريع تصل تكلفتها إلى مليون درهم، بتغطية 80% من التكلفة وسداد حتى 60 شهرًا)، التمويل الصغير (حتى 1-2 مليون درهم للمنشآت الصغيرة النامية)، تمويل التوسع (حتى 2-3 مليون درهم للمنشآت الجاهزة للنمو)، إضافة إلى صناديق زراعية متخصصة وتمويل رأس المال العامل والمركبات والمعدات وخصم الفواتير وتمويل مخزون التجارة الإلكترونية. يمكن للمواطنين الإماراتيين بين 21 و60 عامًا ممن لديهم أعمال في أبوظبي والمنطقة الغربية التقديم عبر قطاعات الصحة والتعليم والزراعة وتقنية المعلومات والسياحة والتصنيع وغيرها.",
+        "url": "https://www.khalifafund.ae/services/funding-scheme/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "sme-finance-facilitator",
+        "name_en": "SME Finance Facilitator Program",
+        "name_ar": "برنامج ميسر التمويل للمنشآت الصغيرة والمتوسطة",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.5669,
+        "description_en": "Bridges the financing gap for SMEs by simplifying business bank account opening and improving access to credit and funding solutions for working capital and long-term investment, through partnerships with financial institutions.",
+        "description_ar": "يسد فجوة التمويل للمنشآت الصغيرة والمتوسطة من خلال تسهيل فتح الحسابات المصرفية للأعمال وتحسين الوصول إلى حلول الائتمان والتمويل لرأس المال العامل والاستثمار طويل الأجل، عبر شراكات مع المؤسسات المالية.",
+        "url": "https://www.khalifafund.ae/program-initiatives/sme-finance-facilitator-program-2/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "entrepreneurship-competition",
+        "name_en": "Khalifa Fund Entrepreneurship Competition (2nd Edition)",
+        "name_ar": "مسابقة صندوق خليفة لريادة الأعمال (النسخة الثانية)",
+        "category": "competition",
+        "bucket": "later",
+        "bucket_rank": 3,
+        "relevance_score": 0.7973,
+        "description_en": "KFED's flagship competition for MVP-ready, Emirati-owned startups solving real challenges across Abu Dhabi's Falcon Economy sectors. Includes a 3-day intensive bootcamp per city (Abu Dhabi, Al Ain, Al Dhafra), mentorship, and a public pitch at the SKEA Awards. Over AED 1M in prizes and in-kind support across 5 sector winners and 3 innovation awards (AI, Robotics, Sustainability). Non-dilutive, free to apply. Requires: age 18+, Abu Dhabi/Al Ain/Al Dhafra residency, Emirati ownership, working MVP/prototype with pitch deck, scalable business model.",
+        "description_ar": "المسابقة الرائدة لصندوق خليفة للشركات الناشئة الجاهزة بنموذج أولي وذات الملكية الإماراتية، والتي تعالج تحديات حقيقية ضمن قطاعات اقتصاد الصقر في أبوظبي. تشمل معسكرًا مكثفًا لمدة 3 أيام في كل مدينة (أبوظبي، العين، الظفرة)، إرشادًا، وعرضًا علنيًا في جوائز سقيا. أكثر من مليون درهم من الجوائز والدعم العيني عبر 5 فائزين قطاعيين و3 جوائز ابتكار (الذكاء الاصطناعي، الروبوتات، الاستدامة). غير مخفِّفة للملكية ومجانية التقديم. تتطلب: عمر 18+، إقامة في أبوظبي/العين/الظفرة، ملكية إماراتية، نموذج أولي عملي مع عرض تقديمي، ونموذج أعمال قابل للتوسع.",
+        "url": "https://www.khalifafund.ae/program-initiatives/khalifa-entrepreneurship-award/",
+        "key_dates": {
+          "applications_open": "2026-04-01",
+          "applications_close": "2026-06-30",
+          "bootcamp": "2026-06-01 to 2026-06-30",
+          "final_pitch_skea": "2026-07-01 to 2026-07-31",
+          "next_edition_hint": "A new edition typically opens applications the following April."
+        },
+        "milestone_status": "recommended"
+      }
+    ],
+    "B-1042": [
+      {
+        "program_id": "funding-scheme",
+        "name_en": "Funding Scheme (Microfinance, Small, Expansion & Working Capital Loans)",
+        "name_ar": "برنامج التمويل (تمويل أصغر، تمويل صغير، تمويل توسع ورأس مال عامل)",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.8952,
+        "description_en": "Khalifa Fund's suite of loan products: Microfinance Loan (up to AED 500K, projects up to AED 1M, 80% cost coverage, up to 60-month repayment), Small Loan (up to AED 1-2M for growing micro/small enterprises), Expansion Loan (up to AED 2-3M for established SMEs ready to scale), plus specialised Agri funds (Pack House/Net House/Water Management), Operating Capital financing, vehicle/equipment financing, bill discounting, and e-commerce inventory financing. Emirati entrepreneurs aged 21-60 with businesses in Abu Dhabi and the Western Region can apply across Healthcare, Education, Agriculture, ICT, Tourism, Manufacturing and other sectors.",
+        "description_ar": "مجموعة منتجات التمويل من صندوق خليفة: التمويل الأصغر (حتى 500 ألف درهم لمشاريع تصل تكلفتها إلى مليون درهم، بتغطية 80% من التكلفة وسداد حتى 60 شهرًا)، التمويل الصغير (حتى 1-2 مليون درهم للمنشآت الصغيرة النامية)، تمويل التوسع (حتى 2-3 مليون درهم للمنشآت الجاهزة للنمو)، إضافة إلى صناديق زراعية متخصصة وتمويل رأس المال العامل والمركبات والمعدات وخصم الفواتير وتمويل مخزون التجارة الإلكترونية. يمكن للمواطنين الإماراتيين بين 21 و60 عامًا ممن لديهم أعمال في أبوظبي والمنطقة الغربية التقديم عبر قطاعات الصحة والتعليم والزراعة وتقنية المعلومات والسياحة والتصنيع وغيرها.",
+        "url": "https://www.khalifafund.ae/services/funding-scheme/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "sme-finance-facilitator",
+        "name_en": "SME Finance Facilitator Program",
+        "name_ar": "برنامج ميسر التمويل للمنشآت الصغيرة والمتوسطة",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.4862,
+        "description_en": "Bridges the financing gap for SMEs by simplifying business bank account opening and improving access to credit and funding solutions for working capital and long-term investment, through partnerships with financial institutions.",
+        "description_ar": "يسد فجوة التمويل للمنشآت الصغيرة والمتوسطة من خلال تسهيل فتح الحسابات المصرفية للأعمال وتحسين الوصول إلى حلول الائتمان والتمويل لرأس المال العامل والاستثمار طويل الأجل، عبر شراكات مع المؤسسات المالية.",
+        "url": "https://www.khalifafund.ae/program-initiatives/sme-finance-facilitator-program-2/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "entrepreneurship-competition",
+        "name_en": "Khalifa Fund Entrepreneurship Competition (2nd Edition)",
+        "name_ar": "مسابقة صندوق خليفة لريادة الأعمال (النسخة الثانية)",
+        "category": "competition",
+        "bucket": "later",
+        "bucket_rank": 3,
+        "relevance_score": 0.7283,
+        "description_en": "KFED's flagship competition for MVP-ready, Emirati-owned startups solving real challenges across Abu Dhabi's Falcon Economy sectors. Includes a 3-day intensive bootcamp per city (Abu Dhabi, Al Ain, Al Dhafra), mentorship, and a public pitch at the SKEA Awards. Over AED 1M in prizes and in-kind support across 5 sector winners and 3 innovation awards (AI, Robotics, Sustainability). Non-dilutive, free to apply. Requires: age 18+, Abu Dhabi/Al Ain/Al Dhafra residency, Emirati ownership, working MVP/prototype with pitch deck, scalable business model.",
+        "description_ar": "المسابقة الرائدة لصندوق خليفة للشركات الناشئة الجاهزة بنموذج أولي وذات الملكية الإماراتية، والتي تعالج تحديات حقيقية ضمن قطاعات اقتصاد الصقر في أبوظبي. تشمل معسكرًا مكثفًا لمدة 3 أيام في كل مدينة (أبوظبي، العين، الظفرة)، إرشادًا، وعرضًا علنيًا في جوائز سقيا. أكثر من مليون درهم من الجوائز والدعم العيني عبر 5 فائزين قطاعيين و3 جوائز ابتكار (الذكاء الاصطناعي، الروبوتات، الاستدامة). غير مخفِّفة للملكية ومجانية التقديم. تتطلب: عمر 18+، إقامة في أبوظبي/العين/الظفرة، ملكية إماراتية، نموذج أولي عملي مع عرض تقديمي، ونموذج أعمال قابل للتوسع.",
+        "url": "https://www.khalifafund.ae/program-initiatives/khalifa-entrepreneurship-award/",
+        "key_dates": {
+          "applications_open": "2026-04-01",
+          "applications_close": "2026-06-30",
+          "bootcamp": "2026-06-01 to 2026-06-30",
+          "final_pitch_skea": "2026-07-01 to 2026-07-31",
+          "next_edition_hint": "A new edition typically opens applications the following April."
+        },
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "sme-export-enablement",
+        "name_en": "SME Export Enablement Program",
+        "name_ar": "برنامج تمكين التصدير للمنشآت الصغيرة والمتوسطة",
+        "category": "export",
+        "bucket": "later",
+        "bucket_rank": 3,
+        "relevance_score": 0.5354,
+        "description_en": "Equips SMEs with tools and support to enter international markets: expert advisory, capacity building, and access to global trade platforms to boost global competitiveness and identify export opportunities.",
+        "description_ar": "يزود المنشآت الصغيرة والمتوسطة بالأدوات والدعم لدخول الأسواق العالمية: استشارات متخصصة، بناء قدرات، والوصول إلى منصات التجارة العالمية لتعزيز التنافسية العالمية وتحديد فرص التصدير.",
+        "url": "https://www.khalifafund.ae/program-initiatives/sme-export-enablement-program/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      }
+    ],
+    "B-2077": [
+      {
+        "program_id": "ruwad-al-ain-bootcamp",
+        "name_en": "Ruwad Al Ain Bootcamp",
+        "name_ar": "معسكر رواد العين",
+        "category": "bootcamp",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.7432,
+        "description_en": "An intensive 5-day bootcamp led by Khalifa Fund with ADGM Academy at MZN Hub Al Ain, equipping UAE Nationals with entrepreneurial mindset, practical skills (team building, business modelling, prototyping, pitching), and access to mentors and sector experts. Focused on four priority sectors: agritech, light manufacturing, AI & cybersecurity, and culture & tourism. Winning teams get 6 months of 1:1 mentorship and accelerated entry into the Khalifa Fund Entrepreneurship Competition.",
+        "description_ar": "معسكر مكثف مدته 5 أيام يقوده صندوق خليفة بالتعاون مع أكاديمية سوق أبوظبي العالمي في مركز MZN بالعين، يزوّد المواطنين بعقلية ريادية ومهارات عملية (بناء الفرق، نمذجة الأعمال، النماذج الأولية، العرض التقديمي)، والوصول إلى موجهين وخبراء قطاعيين. يركز على أربعة قطاعات ذات أولوية: التقنية الزراعية، التصنيع الخفيف، الذكاء الاصطناعي والأمن السيبراني، والثقافة والسياحة. تحصل الفرق الفائزة على 6 أشهر من الإرشاد الفردي ودخول مباشر إلى مسابقة ريادة الأعمال.",
+        "url": "https://www.mediaoffice.abudhabi/en/economy/khalifa-fund-for-enterprise-development-and-adgm-academy-host-ruwad-al-ain-bootcamp-2026/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "light-manufacturing-accelerator",
+        "name_en": "Light Manufacturing Accelerator",
+        "name_ar": "مسرّع التصنيع الخفيف",
+        "category": "accelerator",
+        "bucket": "now",
+        "bucket_rank": 1,
+        "relevance_score": 0.7963,
+        "description_en": "End-to-end support connecting entrepreneurs and manufacturers with government entities, industry partners, and specialised clusters: regulatory navigation, supply-chain access, and integration into sector hubs, enabling SME manufacturers to innovate, scale, and compete locally and globally.",
+        "description_ar": "دعم شامل يربط رواد الأعمال والمصنّعين بالجهات الحكومية وشركاء الصناعة والتجمعات المتخصصة: التوجيه التنظيمي، الوصول إلى سلاسل الإمداد، والاندماج في مراكز القطاع، مما يمكّن مصنّعي المنشآت الصغيرة من الابتكار والتوسع والمنافسة محليًا وعالميًا.",
+        "url": "https://www.khalifafund.ae/program-initiatives/light-manufacturing-accelerator/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "funding-scheme",
+        "name_en": "Funding Scheme (Microfinance, Small, Expansion & Working Capital Loans)",
+        "name_ar": "برنامج التمويل (تمويل أصغر، تمويل صغير، تمويل توسع ورأس مال عامل)",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.7644,
+        "description_en": "Khalifa Fund's suite of loan products: Microfinance Loan (up to AED 500K, projects up to AED 1M, 80% cost coverage, up to 60-month repayment), Small Loan (up to AED 1-2M for growing micro/small enterprises), Expansion Loan (up to AED 2-3M for established SMEs ready to scale), plus specialised Agri funds (Pack House/Net House/Water Management), Operating Capital financing, vehicle/equipment financing, bill discounting, and e-commerce inventory financing. Emirati entrepreneurs aged 21-60 with businesses in Abu Dhabi and the Western Region can apply across Healthcare, Education, Agriculture, ICT, Tourism, Manufacturing and other sectors.",
+        "description_ar": "مجموعة منتجات التمويل من صندوق خليفة: التمويل الأصغر (حتى 500 ألف درهم لمشاريع تصل تكلفتها إلى مليون درهم، بتغطية 80% من التكلفة وسداد حتى 60 شهرًا)، التمويل الصغير (حتى 1-2 مليون درهم للمنشآت الصغيرة النامية)، تمويل التوسع (حتى 2-3 مليون درهم للمنشآت الجاهزة للنمو)، إضافة إلى صناديق زراعية متخصصة وتمويل رأس المال العامل والمركبات والمعدات وخصم الفواتير وتمويل مخزون التجارة الإلكترونية. يمكن للمواطنين الإماراتيين بين 21 و60 عامًا ممن لديهم أعمال في أبوظبي والمنطقة الغربية التقديم عبر قطاعات الصحة والتعليم والزراعة وتقنية المعلومات والسياحة والتصنيع وغيرها.",
+        "url": "https://www.khalifafund.ae/services/funding-scheme/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "entrepreneurship-competition",
+        "name_en": "Khalifa Fund Entrepreneurship Competition (2nd Edition)",
+        "name_ar": "مسابقة صندوق خليفة لريادة الأعمال (النسخة الثانية)",
+        "category": "competition",
+        "bucket": "later",
+        "bucket_rank": 3,
+        "relevance_score": 0.7597,
+        "description_en": "KFED's flagship competition for MVP-ready, Emirati-owned startups solving real challenges across Abu Dhabi's Falcon Economy sectors. Includes a 3-day intensive bootcamp per city (Abu Dhabi, Al Ain, Al Dhafra), mentorship, and a public pitch at the SKEA Awards. Over AED 1M in prizes and in-kind support across 5 sector winners and 3 innovation awards (AI, Robotics, Sustainability). Non-dilutive, free to apply. Requires: age 18+, Abu Dhabi/Al Ain/Al Dhafra residency, Emirati ownership, working MVP/prototype with pitch deck, scalable business model.",
+        "description_ar": "المسابقة الرائدة لصندوق خليفة للشركات الناشئة الجاهزة بنموذج أولي وذات الملكية الإماراتية، والتي تعالج تحديات حقيقية ضمن قطاعات اقتصاد الصقر في أبوظبي. تشمل معسكرًا مكثفًا لمدة 3 أيام في كل مدينة (أبوظبي، العين، الظفرة)، إرشادًا، وعرضًا علنيًا في جوائز سقيا. أكثر من مليون درهم من الجوائز والدعم العيني عبر 5 فائزين قطاعيين و3 جوائز ابتكار (الذكاء الاصطناعي، الروبوتات، الاستدامة). غير مخفِّفة للملكية ومجانية التقديم. تتطلب: عمر 18+، إقامة في أبوظبي/العين/الظفرة، ملكية إماراتية، نموذج أولي عملي مع عرض تقديمي، ونموذج أعمال قابل للتوسع.",
+        "url": "https://www.khalifafund.ae/program-initiatives/khalifa-entrepreneurship-award/",
+        "key_dates": {
+          "applications_open": "2026-04-01",
+          "applications_close": "2026-06-30",
+          "bootcamp": "2026-06-01 to 2026-06-30",
+          "final_pitch_skea": "2026-07-01 to 2026-07-31",
+          "next_edition_hint": "A new edition typically opens applications the following April."
+        },
+        "milestone_status": "recommended"
+      }
+    ],
+    "GUEST-2": [
+      {
+        "program_id": "ruwad-al-ain-bootcamp",
+        "name_en": "Ruwad Al Ain Bootcamp",
+        "name_ar": "معسكر رواد العين",
+        "category": "bootcamp",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.7527,
+        "description_en": "An intensive 5-day bootcamp led by Khalifa Fund with ADGM Academy at MZN Hub Al Ain, equipping UAE Nationals with entrepreneurial mindset, practical skills (team building, business modelling, prototyping, pitching), and access to mentors and sector experts. Focused on four priority sectors: agritech, light manufacturing, AI & cybersecurity, and culture & tourism. Winning teams get 6 months of 1:1 mentorship and accelerated entry into the Khalifa Fund Entrepreneurship Competition.",
+        "description_ar": "معسكر مكثف مدته 5 أيام يقوده صندوق خليفة بالتعاون مع أكاديمية سوق أبوظبي العالمي في مركز MZN بالعين، يزوّد المواطنين بعقلية ريادية ومهارات عملية (بناء الفرق، نمذجة الأعمال، النماذج الأولية، العرض التقديمي)، والوصول إلى موجهين وخبراء قطاعيين. يركز على أربعة قطاعات ذات أولوية: التقنية الزراعية، التصنيع الخفيف، الذكاء الاصطناعي والأمن السيبراني، والثقافة والسياحة. تحصل الفرق الفائزة على 6 أشهر من الإرشاد الفردي ودخول مباشر إلى مسابقة ريادة الأعمال.",
+        "url": "https://www.mediaoffice.abudhabi/en/economy/khalifa-fund-for-enterprise-development-and-adgm-academy-host-ruwad-al-ain-bootcamp-2026/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "light-manufacturing-accelerator",
+        "name_en": "Light Manufacturing Accelerator",
+        "name_ar": "مسرّع التصنيع الخفيف",
+        "category": "accelerator",
+        "bucket": "now",
+        "bucket_rank": 1,
+        "relevance_score": 0.7679,
+        "description_en": "End-to-end support connecting entrepreneurs and manufacturers with government entities, industry partners, and specialised clusters: regulatory navigation, supply-chain access, and integration into sector hubs, enabling SME manufacturers to innovate, scale, and compete locally and globally.",
+        "description_ar": "دعم شامل يربط رواد الأعمال والمصنّعين بالجهات الحكومية وشركاء الصناعة والتجمعات المتخصصة: التوجيه التنظيمي، الوصول إلى سلاسل الإمداد، والاندماج في مراكز القطاع، مما يمكّن مصنّعي المنشآت الصغيرة من الابتكار والتوسع والمنافسة محليًا وعالميًا.",
+        "url": "https://www.khalifafund.ae/program-initiatives/light-manufacturing-accelerator/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "funding-scheme",
+        "name_en": "Funding Scheme (Microfinance, Small, Expansion & Working Capital Loans)",
+        "name_ar": "برنامج التمويل (تمويل أصغر، تمويل صغير، تمويل توسع ورأس مال عامل)",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.9099,
+        "description_en": "Khalifa Fund's suite of loan products: Microfinance Loan (up to AED 500K, projects up to AED 1M, 80% cost coverage, up to 60-month repayment), Small Loan (up to AED 1-2M for growing micro/small enterprises), Expansion Loan (up to AED 2-3M for established SMEs ready to scale), plus specialised Agri funds (Pack House/Net House/Water Management), Operating Capital financing, vehicle/equipment financing, bill discounting, and e-commerce inventory financing. Emirati entrepreneurs aged 21-60 with businesses in Abu Dhabi and the Western Region can apply across Healthcare, Education, Agriculture, ICT, Tourism, Manufacturing and other sectors.",
+        "description_ar": "مجموعة منتجات التمويل من صندوق خليفة: التمويل الأصغر (حتى 500 ألف درهم لمشاريع تصل تكلفتها إلى مليون درهم، بتغطية 80% من التكلفة وسداد حتى 60 شهرًا)، التمويل الصغير (حتى 1-2 مليون درهم للمنشآت الصغيرة النامية)، تمويل التوسع (حتى 2-3 مليون درهم للمنشآت الجاهزة للنمو)، إضافة إلى صناديق زراعية متخصصة وتمويل رأس المال العامل والمركبات والمعدات وخصم الفواتير وتمويل مخزون التجارة الإلكترونية. يمكن للمواطنين الإماراتيين بين 21 و60 عامًا ممن لديهم أعمال في أبوظبي والمنطقة الغربية التقديم عبر قطاعات الصحة والتعليم والزراعة وتقنية المعلومات والسياحة والتصنيع وغيرها.",
+        "url": "https://www.khalifafund.ae/services/funding-scheme/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "entrepreneurship-competition",
+        "name_en": "Khalifa Fund Entrepreneurship Competition (2nd Edition)",
+        "name_ar": "مسابقة صندوق خليفة لريادة الأعمال (النسخة الثانية)",
+        "category": "competition",
+        "bucket": "later",
+        "bucket_rank": 3,
+        "relevance_score": 0.7518,
+        "description_en": "KFED's flagship competition for MVP-ready, Emirati-owned startups solving real challenges across Abu Dhabi's Falcon Economy sectors. Includes a 3-day intensive bootcamp per city (Abu Dhabi, Al Ain, Al Dhafra), mentorship, and a public pitch at the SKEA Awards. Over AED 1M in prizes and in-kind support across 5 sector winners and 3 innovation awards (AI, Robotics, Sustainability). Non-dilutive, free to apply. Requires: age 18+, Abu Dhabi/Al Ain/Al Dhafra residency, Emirati ownership, working MVP/prototype with pitch deck, scalable business model.",
+        "description_ar": "المسابقة الرائدة لصندوق خليفة للشركات الناشئة الجاهزة بنموذج أولي وذات الملكية الإماراتية، والتي تعالج تحديات حقيقية ضمن قطاعات اقتصاد الصقر في أبوظبي. تشمل معسكرًا مكثفًا لمدة 3 أيام في كل مدينة (أبوظبي، العين، الظفرة)، إرشادًا، وعرضًا علنيًا في جوائز سقيا. أكثر من مليون درهم من الجوائز والدعم العيني عبر 5 فائزين قطاعيين و3 جوائز ابتكار (الذكاء الاصطناعي، الروبوتات، الاستدامة). غير مخفِّفة للملكية ومجانية التقديم. تتطلب: عمر 18+، إقامة في أبوظبي/العين/الظفرة، ملكية إماراتية، نموذج أولي عملي مع عرض تقديمي، ونموذج أعمال قابل للتوسع.",
+        "url": "https://www.khalifafund.ae/program-initiatives/khalifa-entrepreneurship-award/",
+        "key_dates": {
+          "applications_open": "2026-04-01",
+          "applications_close": "2026-06-30",
+          "bootcamp": "2026-06-01 to 2026-06-30",
+          "final_pitch_skea": "2026-07-01 to 2026-07-31",
+          "next_edition_hint": "A new edition typically opens applications the following April."
+        },
+        "milestone_status": "recommended"
+      }
+    ],
+    "GUEST-3": [
+      {
+        "program_id": "prompt-engineering",
+        "name_en": "Prompt Engineering Programme (AI Skills)",
+        "name_ar": "برنامج هندسة الأوامر (مهارات الذكاء الاصطناعي)",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.787,
+        "description_en": "A specialised training programme (2nd edition delivered with the Abu Dhabi Chamber in Al Ain) equipping entrepreneurs with practical AI and prompt-engineering skills to support the growth of innovative, AI-enabled businesses.",
+        "description_ar": "برنامج تدريبي متخصص (النسخة الثانية بالتعاون مع غرفة تجارة وصناعة أبوظبي في العين) يزوّد رواد الأعمال بمهارات عملية في الذكاء الاصطناعي وهندسة الأوامر لدعم نمو أعمال مبتكرة قائمة على الذكاء الاصطناعي.",
+        "url": "https://gulfnews.com/uae/khalifa-fund-launches-ai-training-programme-for-entrepreneurs-in-al-ain-1.500603936",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "capability-building",
+        "name_en": "Capability Building (Mentorship & Training)",
+        "name_ar": "بناء القدرات (الإرشاد والتدريب)",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.7828,
+        "description_en": "Khalifa Fund's core training and mentorship service. Tailored entrepreneurship courses covering business setup, management, finance, marketing, and technology, plus 1:1 mentorship and consultancy for strategy and growth. Available to potential entrepreneurs and existing SMEs at any stage.",
+        "description_ar": "الخدمة الأساسية للتدريب والإرشاد من صندوق خليفة. دورات تدريبية مخصصة في ريادة الأعمال تغطي تأسيس الأعمال والإدارة والتمويل والتسويق والتقنية، بالإضافة إلى إرشاد استشاري فردي للاستراتيجية والنمو. متاحة لرواد الأعمال المحتملين والمنشآت الصغيرة والمتوسطة القائمة في أي مرحلة.",
+        "url": "https://www.khalifafund.ae/services/capability-building/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "membership-programme",
+        "name_en": "MZN Hub Membership Programme",
+        "name_ar": "برنامج عضوية مركز مزن",
+        "category": "community",
+        "bucket": "now",
+        "bucket_rank": 1,
+        "relevance_score": 0.779,
+        "description_en": "Membership at Khalifa Fund's MZN Business Accelerators (Abu Dhabi, Al Ain, Al Dhafra): co-working space, bookable meeting rooms, maker spaces (incl. 3D printing), events, workshops, digital tools, and discounts with service providers.",
+        "description_ar": "عضوية في مسرّعات أعمال مزن التابعة لصندوق خليفة (أبوظبي، العين، الظفرة): مساحات عمل مشتركة، قاعات اجتماعات قابلة للحجز، مساحات صنع (تشمل الطباعة ثلاثية الأبعاد)، فعاليات، ورش عمل، أدوات رقمية، وخصومات مع مزودي الخدمات.",
+        "url": "https://www.khalifafund.ae/services/membership-program/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "sme-finance-facilitator",
+        "name_en": "SME Finance Facilitator Program",
+        "name_ar": "برنامج ميسر التمويل للمنشآت الصغيرة والمتوسطة",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.7863,
+        "description_en": "Bridges the financing gap for SMEs by simplifying business bank account opening and improving access to credit and funding solutions for working capital and long-term investment, through partnerships with financial institutions.",
+        "description_ar": "يسد فجوة التمويل للمنشآت الصغيرة والمتوسطة من خلال تسهيل فتح الحسابات المصرفية للأعمال وتحسين الوصول إلى حلول الائتمان والتمويل لرأس المال العامل والاستثمار طويل الأجل، عبر شراكات مع المؤسسات المالية.",
+        "url": "https://www.khalifafund.ae/program-initiatives/sme-finance-facilitator-program-2/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      }
+    ],
+    "GUEST-4": [
+      {
+        "program_id": "prompt-engineering",
+        "name_en": "Prompt Engineering Programme (AI Skills)",
+        "name_ar": "برنامج هندسة الأوامر (مهارات الذكاء الاصطناعي)",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.4179,
+        "description_en": "A specialised training programme (2nd edition delivered with the Abu Dhabi Chamber in Al Ain) equipping entrepreneurs with practical AI and prompt-engineering skills to support the growth of innovative, AI-enabled businesses.",
+        "description_ar": "برنامج تدريبي متخصص (النسخة الثانية بالتعاون مع غرفة تجارة وصناعة أبوظبي في العين) يزوّد رواد الأعمال بمهارات عملية في الذكاء الاصطناعي وهندسة الأوامر لدعم نمو أعمال مبتكرة قائمة على الذكاء الاصطناعي.",
+        "url": "https://gulfnews.com/uae/khalifa-fund-launches-ai-training-programme-for-entrepreneurs-in-al-ain-1.500603936",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "capability-building",
+        "name_en": "Capability Building (Mentorship & Training)",
+        "name_ar": "بناء القدرات (الإرشاد والتدريب)",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.417,
+        "description_en": "Khalifa Fund's core training and mentorship service. Tailored entrepreneurship courses covering business setup, management, finance, marketing, and technology, plus 1:1 mentorship and consultancy for strategy and growth. Available to potential entrepreneurs and existing SMEs at any stage.",
+        "description_ar": "الخدمة الأساسية للتدريب والإرشاد من صندوق خليفة. دورات تدريبية مخصصة في ريادة الأعمال تغطي تأسيس الأعمال والإدارة والتمويل والتسويق والتقنية، بالإضافة إلى إرشاد استشاري فردي للاستراتيجية والنمو. متاحة لرواد الأعمال المحتملين والمنشآت الصغيرة والمتوسطة القائمة في أي مرحلة.",
+        "url": "https://www.khalifafund.ae/services/capability-building/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "game-incubator",
+        "name_en": "Game Incubator Programme",
+        "name_ar": "برنامج حاضنة الألعاب",
+        "category": "incubator",
+        "bucket": "now",
+        "bucket_rank": 1,
+        "relevance_score": 0.5911,
+        "description_en": "A 6-month hands-on programme for Emirati youth aged 18-25 to enter the gaming sector, combining technical game development training with entrepreneurship: team-based prototype building, mentorship from industry experts, and a final Demo Day. Located at MZN Hub, Al Ain.",
+        "description_ar": "برنامج عملي مدته 6 أشهر لشباب إماراتي بين 18 و25 عامًا لدخول قطاع الألعاب، يجمع بين التدريب التقني على تطوير الألعاب وريادة الأعمال: بناء نموذج أولي ضمن فريق، إرشاد من خبراء الصناعة، ويوم عرض ختامي. يقام في مركز MZN بمدينة العين.",
+        "url": "https://www.khalifafund.ae/program-initiatives/game-incubator-programme/",
+        "key_dates": {
+          "programme_start": "2026-04-27",
+          "programme_end": "2026-10-27"
+        },
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "sme-finance-facilitator",
+        "name_en": "SME Finance Facilitator Program",
+        "name_ar": "برنامج ميسر التمويل للمنشآت الصغيرة والمتوسطة",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.4177,
+        "description_en": "Bridges the financing gap for SMEs by simplifying business bank account opening and improving access to credit and funding solutions for working capital and long-term investment, through partnerships with financial institutions.",
+        "description_ar": "يسد فجوة التمويل للمنشآت الصغيرة والمتوسطة من خلال تسهيل فتح الحسابات المصرفية للأعمال وتحسين الوصول إلى حلول الائتمان والتمويل لرأس المال العامل والاستثمار طويل الأجل، عبر شراكات مع المؤسسات المالية.",
+        "url": "https://www.khalifafund.ae/program-initiatives/sme-finance-facilitator-program-2/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      }
+    ],
+    "GUEST": [
+      {
+        "program_id": "future-entrepreneur",
+        "name_en": "Future Entrepreneur Programme",
+        "name_ar": "برنامج رائد الأعمال المستقبلي",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.5412,
+        "description_en": "Free customised learning pathways for Emirati youth aged 4-18 to build entrepreneurship, innovation, and financial literacy skills through practical, interactive activities. Runs as a summer programme (2026 edition).",
+        "description_ar": "مسارات تعليمية مخصصة ومجانية لشباب إماراتي بين 4 و18 عامًا لبناء مهارات ريادة الأعمال والابتكار والثقافة المالية من خلال أنشطة عملية وتفاعلية. يقام كبرنامج صيفي (نسخة 2026).",
+        "url": "https://www.khalifafund.ae/program-initiatives/young-entrepreneurship-program-2026/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "prompt-engineering",
+        "name_en": "Prompt Engineering Programme (AI Skills)",
+        "name_ar": "برنامج هندسة الأوامر (مهارات الذكاء الاصطناعي)",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.2004,
+        "description_en": "A specialised training programme (2nd edition delivered with the Abu Dhabi Chamber in Al Ain) equipping entrepreneurs with practical AI and prompt-engineering skills to support the growth of innovative, AI-enabled businesses.",
+        "description_ar": "برنامج تدريبي متخصص (النسخة الثانية بالتعاون مع غرفة تجارة وصناعة أبوظبي في العين) يزوّد رواد الأعمال بمهارات عملية في الذكاء الاصطناعي وهندسة الأوامر لدعم نمو أعمال مبتكرة قائمة على الذكاء الاصطناعي.",
+        "url": "https://gulfnews.com/uae/khalifa-fund-launches-ai-training-programme-for-entrepreneurs-in-al-ain-1.500603936",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "capability-building",
+        "name_en": "Capability Building (Mentorship & Training)",
+        "name_ar": "بناء القدرات (الإرشاد والتدريب)",
+        "category": "training",
+        "bucket": "now",
+        "bucket_rank": 0,
+        "relevance_score": 0.1183,
+        "description_en": "Khalifa Fund's core training and mentorship service. Tailored entrepreneurship courses covering business setup, management, finance, marketing, and technology, plus 1:1 mentorship and consultancy for strategy and growth. Available to potential entrepreneurs and existing SMEs at any stage.",
+        "description_ar": "الخدمة الأساسية للتدريب والإرشاد من صندوق خليفة. دورات تدريبية مخصصة في ريادة الأعمال تغطي تأسيس الأعمال والإدارة والتمويل والتسويق والتقنية، بالإضافة إلى إرشاد استشاري فردي للاستراتيجية والنمو. متاحة لرواد الأعمال المحتملين والمنشآت الصغيرة والمتوسطة القائمة في أي مرحلة.",
+        "url": "https://www.khalifafund.ae/services/capability-building/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "game-incubator",
+        "name_en": "Game Incubator Programme",
+        "name_ar": "برنامج حاضنة الألعاب",
+        "category": "incubator",
+        "bucket": "now",
+        "bucket_rank": 1,
+        "relevance_score": 0.8936,
+        "description_en": "A 6-month hands-on programme for Emirati youth aged 18-25 to enter the gaming sector, combining technical game development training with entrepreneurship: team-based prototype building, mentorship from industry experts, and a final Demo Day. Located at MZN Hub, Al Ain.",
+        "description_ar": "برنامج عملي مدته 6 أشهر لشباب إماراتي بين 18 و25 عامًا لدخول قطاع الألعاب، يجمع بين التدريب التقني على تطوير الألعاب وريادة الأعمال: بناء نموذج أولي ضمن فريق، إرشاد من خبراء الصناعة، ويوم عرض ختامي. يقام في مركز MZN بمدينة العين.",
+        "url": "https://www.khalifafund.ae/program-initiatives/game-incubator-programme/",
+        "key_dates": {
+          "programme_start": "2026-04-27",
+          "programme_end": "2026-10-27"
+        },
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "funding-scheme",
+        "name_en": "Funding Scheme (Microfinance, Small, Expansion & Working Capital Loans)",
+        "name_ar": "برنامج التمويل (تمويل أصغر، تمويل صغير، تمويل توسع ورأس مال عامل)",
+        "category": "funding",
+        "bucket": "next",
+        "bucket_rank": 2,
+        "relevance_score": 0.3811,
+        "description_en": "Khalifa Fund's suite of loan products: Microfinance Loan (up to AED 500K, projects up to AED 1M, 80% cost coverage, up to 60-month repayment), Small Loan (up to AED 1-2M for growing micro/small enterprises), Expansion Loan (up to AED 2-3M for established SMEs ready to scale), plus specialised Agri funds (Pack House/Net House/Water Management), Operating Capital financing, vehicle/equipment financing, bill discounting, and e-commerce inventory financing. Emirati entrepreneurs aged 21-60 with businesses in Abu Dhabi and the Western Region can apply across Healthcare, Education, Agriculture, ICT, Tourism, Manufacturing and other sectors.",
+        "description_ar": "مجموعة منتجات التمويل من صندوق خليفة: التمويل الأصغر (حتى 500 ألف درهم لمشاريع تصل تكلفتها إلى مليون درهم، بتغطية 80% من التكلفة وسداد حتى 60 شهرًا)، التمويل الصغير (حتى 1-2 مليون درهم للمنشآت الصغيرة النامية)، تمويل التوسع (حتى 2-3 مليون درهم للمنشآت الجاهزة للنمو)، إضافة إلى صناديق زراعية متخصصة وتمويل رأس المال العامل والمركبات والمعدات وخصم الفواتير وتمويل مخزون التجارة الإلكترونية. يمكن للمواطنين الإماراتيين بين 21 و60 عامًا ممن لديهم أعمال في أبوظبي والمنطقة الغربية التقديم عبر قطاعات الصحة والتعليم والزراعة وتقنية المعلومات والسياحة والتصنيع وغيرها.",
+        "url": "https://www.khalifafund.ae/services/funding-scheme/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "sme-export-enablement",
+        "name_en": "SME Export Enablement Program",
+        "name_ar": "برنامج تمكين التصدير للمنشآت الصغيرة والمتوسطة",
+        "category": "export",
+        "bucket": "later",
+        "bucket_rank": 3,
+        "relevance_score": 0.4056,
+        "description_en": "Equips SMEs with tools and support to enter international markets: expert advisory, capacity building, and access to global trade platforms to boost global competitiveness and identify export opportunities.",
+        "description_ar": "يزود المنشآت الصغيرة والمتوسطة بالأدوات والدعم لدخول الأسواق العالمية: استشارات متخصصة، بناء قدرات، والوصول إلى منصات التجارة العالمية لتعزيز التنافسية العالمية وتحديد فرص التصدير.",
+        "url": "https://www.khalifafund.ae/program-initiatives/sme-export-enablement-program/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      },
+      {
+        "program_id": "membership-programme",
+        "name_en": "MZN Hub Membership Programme",
+        "name_ar": "برنامج عضوية مركز مزن",
+        "category": "community",
+        "bucket": "now",
+        "bucket_rank": 1,
+        "relevance_score": 0.7689,
+        "description_en": "Membership at Khalifa Fund's MZN Business Accelerators (Abu Dhabi, Al Ain, Al Dhafra): co-working space, bookable meeting rooms, maker spaces (incl. 3D printing), events, workshops, digital tools, and discounts with service providers.",
+        "description_ar": "عضوية في مسرّعات أعمال مزن التابعة لصندوق خليفة (أبوظبي، العين، الظفرة): مساحات عمل مشتركة، قاعات اجتماعات قابلة للحجز، مساحات صنع (تشمل الطباعة ثلاثية الأبعاد)، فعاليات، ورش عمل، أدوات رقمية، وخصومات مع مزودي الخدمات.",
+        "url": "https://www.khalifafund.ae/services/membership-program/",
+        "key_dates": null,
+        "milestone_status": "recommended"
+      }
+    ]
+  },
+  "escalations": [
+    {
+      "reason_code": "large_funding_request",
+      "reason_text": "Funding amount mentioned appears to exceed standard KFED loan product ceilings (Expansion Loan tops out near AED 3M) and needs a human credit assessment.",
+      "urgency": "high",
+      "beneficiary_id": "QUIZ-2",
+      "profile_snapshot": {
+        "sector": "manufacturing",
+        "stage": "growth",
+        "skill_gaps": [
+          "procurement",
+          "funding"
+        ]
+      },
+      "generated_on": "2026-07-16"
+    },
+    {
+      "reason_code": "large_funding_request",
+      "reason_text": "Funding amount mentioned appears to exceed standard KFED loan product ceilings (Expansion Loan tops out near AED 3M) and needs a human credit assessment.",
+      "urgency": "high",
+      "beneficiary_id": "GUEST-2",
+      "profile_snapshot": {
+        "sector": "manufacturing",
+        "stage": "startup",
+        "skill_gaps": [
+          "funding"
+        ]
+      },
+      "generated_on": "2026-07-16"
+    },
+    {
+      "reason_code": "beneficiary_distress",
+      "reason_text": "Language suggests the entrepreneur is frustrated or in distress; a human advisor should follow up personally.",
+      "urgency": "high",
+      "beneficiary_id": "GUEST-3",
+      "profile_snapshot": {
+        "sector": "general",
+        "stage": "startup",
+        "skill_gaps": []
+      },
+      "generated_on": "2026-07-16"
+    }
+  ],
+  "quiz_progress": {
+    "QUIZ-1": {
+      "index": 5,
+      "answers": {
+        "business_name": "مزرعة الواحة",
+        "sector": "agri",
+        "stage": "idea",
+        "skill_gaps": [
+          "funding"
+        ],
+        "context": "عندي بيت محمي صغير وأحتاج تمويل توسع."
+      },
+      "complete": true
+    },
+    "QUIZ-2": {
+      "index": 5,
+      "answers": {
+        "business_name": "Falcon Steel Works",
+        "sector": "manufacturing",
+        "stage": "growth",
+        "skill_gaps": [
+          "procurement"
+        ],
+        "context": "We need a loan of 9 million AED to build a new plant."
+      },
+      "complete": true
+    },
+    "GUEST": {
+      "index": 5,
+      "answers": {
+        "business_name": "Falcon systems",
+        "sector": "ecommerce",
+        "stage": "youth",
+        "skill_gaps": [
+          "ai_skills",
+          "marketing"
+        ],
+        "context": "Im not skilled"
+      },
+      "complete": true
+    }
+  },
+  "next_beneficiary_seq": 3000
+}

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KFED AI Entrepreneur Advisor — Falcon Systems</title>
+<style>
+  :root {
+    --navy: #0d1338;
+    --gold: #f0a500;
+    --blue: #2c5cf6;
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #1a1d2b;
+    --muted: #6b7280;
+    --now: #2c5cf6;
+    --next: #f0a500;
+    --later: #9ca3af;
+    --danger: #d64545;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+  }
+  body[dir="rtl"] { font-family: "Segoe UI", Tahoma, "Dubai", Arial, sans-serif; }
+  header {
+    background: var(--navy); color: white; padding: 16px 28px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  }
+  header .brandRow { display: flex; align-items: center; gap: 10px; }
+  .teamBadge {
+    background: var(--gold); color: var(--navy); font-weight: 800; font-size: 11px;
+    padding: 3px 9px; border-radius: 20px; letter-spacing: 0.03em;
+  }
+  header h1 { font-size: 18px; margin: 0; font-weight: 700; }
+  header .sub { color: #aebbe8; font-size: 12px; margin-top: 2px; }
+  .controls { display: flex; gap: 10px; align-items: center; }
+  select, button.pill {
+    background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+  }
+  button.pill.active { background: var(--gold); color: var(--navy); border-color: var(--gold); font-weight: 700; }
+  .layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px; padding: 18px; max-width: 1200px; margin: 0 auto; }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border-radius: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); padding: 16px; }
+
+  /* ---------------- Quiz view ---------------- */
+  #quizWrap { max-width: 680px; margin: 40px auto; padding: 0 18px; }
+  #quizCard { padding: 32px; }
+  #quizProgressTrack { height: 6px; background: #e6e9f2; border-radius: 4px; overflow: hidden; margin-bottom: 22px; }
+  #quizProgressFill { height: 100%; background: var(--blue); width: 0%; transition: width .25s ease; }
+  #quizStepLabel { font-size: 12px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; }
+  #quizPrompt { font-size: 21px; font-weight: 700; line-height: 1.4; margin-bottom: 22px; }
+  .quizTextInput {
+    width: 100%; padding: 13px 15px; border-radius: 10px; border: 1px solid #d9deea; font-size: 15px; margin-bottom: 14px;
+  }
+  .choiceBtn {
+    display: block; width: 100%; text-align: left; padding: 13px 16px; margin-bottom: 9px;
+    border: 1px solid #d9deea; border-radius: 10px; background: white; font-size: 14.5px; cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  body[dir="rtl"] .choiceBtn { text-align: right; }
+  .choiceBtn:hover { border-color: var(--blue); background: #f2f5ff; }
+  .choiceBtn.selected { border-color: var(--blue); background: #eaf0ff; font-weight: 700; }
+  .quizNextRow { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+  .quizNextBtn {
+    background: var(--blue); color: white; border: none; padding: 12px 26px; border-radius: 10px;
+    font-weight: 700; font-size: 14.5px; cursor: pointer;
+  }
+  .quizNextBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .quizSkipBtn { background: none; border: none; color: var(--muted); font-size: 13px; cursor: pointer; text-decoration: underline; }
+  #quizIntro { text-align: center; color: var(--muted); font-size: 13.5px; margin-bottom: 18px; }
+
+  /* ---------------- Main (chat + pathway) view ---------------- */
+  #mainWrap { display: none; }
+  #chatPanel { display: flex; flex-direction: column; height: 72vh; }
+  #messages { flex: 1; overflow-y: auto; padding: 6px 4px; display: flex; flex-direction: column; gap: 10px; }
+  .msg { max-width: 85%; padding: 10px 14px; border-radius: 12px; line-height: 1.45; font-size: 14.5px; white-space: pre-wrap; }
+  .msg.user { align-self: flex-end; background: var(--blue); color: white; border-bottom-right-radius: 2px; }
+  body[dir="rtl"] .msg.user { border-bottom-right-radius: 12px; border-bottom-left-radius: 2px; }
+  .msg.bot { align-self: flex-start; background: #eef1f8; border-bottom-left-radius: 2px; }
+  body[dir="rtl"] .msg.bot { border-bottom-left-radius: 12px; border-bottom-right-radius: 2px; }
+  .msg.escalation { align-self: stretch; background: #fdecec; border: 1px solid var(--danger); color: #7a1f1f; font-size: 13.5px; }
+  .inputRow { display: flex; gap: 8px; margin-top: 10px; }
+  .inputRow input { flex: 1; padding: 12px 14px; border-radius: 10px; border: 1px solid #d9deea; font-size: 14px; }
+  .inputRow button { background: var(--blue); color: white; border: none; padding: 0 20px; border-radius: 10px; font-weight: 600; cursor: pointer; }
+  .agentTrace { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  h3 { margin-top: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+  .pathItem { border: 1px solid #e6e9f2; border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+  .bucket-now { border-left: 4px solid var(--now); }
+  .bucket-next { border-left: 4px solid var(--next); }
+  .bucket-later { border-left: 4px solid var(--later); }
+  body[dir="rtl"] .bucket-now { border-left: none; border-right: 4px solid var(--now); }
+  body[dir="rtl"] .bucket-next { border-left: none; border-right: 4px solid var(--next); }
+  body[dir="rtl"] .bucket-later { border-left: none; border-right: 4px solid var(--later); }
+  .pathItem .name { font-weight: 700; font-size: 13.5px; }
+  .pathItem .tag { font-size: 10.5px; text-transform: uppercase; color: var(--muted); }
+  .pathItem .desc { font-size: 12.5px; color: #444; margin-top: 4px; }
+  .pathItem .row { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+  .pathItem a { font-size: 11.5px; color: var(--blue); text-decoration: none; }
+  .doneBtn { font-size: 11px; padding: 4px 10px; border-radius: 8px; border: 1px solid #cfd6e6; background: white; cursor: pointer; }
+  .alertBox { background: #fff7e6; border: 1px solid var(--gold); border-radius: 10px; padding: 8px 12px; font-size: 12.5px; margin-bottom: 8px; }
+  .escBanner { background: #fdecec; border: 1px solid var(--danger); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; color: #7a1f1f; margin-bottom: 10px; }
+  footer { text-align: center; font-size: 11.5px; color: var(--muted); padding: 18px; }
+  #teamCredits { font-size: 11px; color: #9099ab; padding-bottom: 18px; text-align: center; }
+  .howBtn, .retakeBtn { font-size: 11px; color: var(--blue); cursor: pointer; text-decoration: underline; margin-inline-end: 14px; }
+  #howBox { display: none; font-size: 12.5px; color: #444; background: #f0f3fa; border-radius: 8px; padding: 10px; margin-top: 8px; }
+</style>
+</head>
+<body dir="ltr">
+
+<header>
+  <div class="brandRow">
+    <div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="teamBadge">FALCON SYSTEMS</span>
+        <h1>KFED AI Entrepreneur Advisor</h1>
+      </div>
+      <div class="sub">Agentic Verse AI Program · ADEK × 42 Abu Dhabi · Khalifa Fund for Enterprise Development</div>
+    </div>
+  </div>
+  <div class="controls">
+    <select id="beneficiarySelect">
+      <option value="GUEST">New beneficiary (GUEST)</option>
+      <option value="B-1042">Returning: B-1042 (Maryam, Agri)</option>
+      <option value="B-2077">Returning: B-2077 (Rashid, Manufacturing)</option>
+    </select>
+    <button class="pill active" id="btnEn" onclick="setLang('en')">EN</button>
+    <button class="pill" id="btnAr" onclick="setLang('ar')">AR / عربي</button>
+  </div>
+</header>
+
+<!-- ============ QUIZ VIEW (the profiling process) ============ -->
+<div id="quizWrap">
+  <div id="quizIntro"></div>
+  <div class="card" id="quizCard">
+    <div id="quizStepLabel">Step 1 of 5</div>
+    <div id="quizProgressTrack"><div id="quizProgressFill"></div></div>
+    <div id="quizPrompt"></div>
+    <div id="quizBody"></div>
+    <div class="quizNextRow">
+      <span class="quizSkipBtn" id="quizSkipBtn" onclick="skipQuestion()" style="visibility:hidden">Skip</span>
+      <button class="quizNextBtn" id="quizNextBtn" onclick="submitCurrentAnswer()">Next</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MAIN VIEW (chat + pathway, post-profiling) ============ -->
+<div id="mainWrap">
+<div class="layout">
+  <div class="card" id="chatPanel">
+    <h3 id="chatTitle">Conversation</h3>
+    <div id="messages"></div>
+    <div class="inputRow">
+      <input id="input" placeholder="Ask a follow-up, or share a progress update…" onkeydown="if(event.key==='Enter')send()">
+      <button onclick="send()" id="sendBtn">Send</button>
+    </div>
+    <div class="agentTrace" id="trace"></div>
+    <div style="margin-top:6px;">
+      <span class="retakeBtn" onclick="retakeQuiz()" id="retakeToggle">Retake profiling quiz</span>
+      <span class="howBtn" onclick="toggleHow()" id="howToggle">How does this work?</span>
+      <div id="howBox"></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="card" id="alertsCard" style="display:none; margin-bottom:14px;">
+      <h3 id="alertsTitle">Alerts</h3>
+      <div id="alerts"></div>
+    </div>
+    <div class="card">
+      <h3 id="pathwayTitle">Your Pathway</h3>
+      <div id="pathway"><span style="font-size:13px;color:#9099ab">Complete the profiling quiz to generate a pathway.</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer id="footerText">
+  Prototype built for the AI Entrepreneur Advisor challenge · RAG grounded in real KFED programme data (khalifafund.ae) · Not affiliated with an official KFED production system.
+</footer>
+<div id="teamCredits">Falcon Systems — Nasser Almarbooei · Ahmed AlAhmed · Mohammed Alkaabi · Falah Alhosani · Rashed Alhosani</div>
+
+<script>
+let lang = 'en';
+let beneficiaryId = 'GUEST';
+let currentQuestion = null;
+let multiSelections = [];
+
+const T = {
+  en: {
+    chatTitle: "Conversation", pathwayTitle: "Your Pathway", alertsTitle: "Upcoming Opportunities",
+    send: "Send", placeholder: "Ask a follow-up, or share a progress update…",
+    now: "Now", next: "Next", later: "Later", markDone: "Mark done", done: "Completed",
+    howBtn: "How does this work?", retake: "Retake profiling quiz", skip: "Skip",
+    nextBtn: "Next", finishBtn: "See my pathway", quizIntro: "A few quick questions before we recommend a pathway — this is the profiling process.",
+    step: (a,b) => `Step ${a} of ${b}`,
+    how: "5 agents work together: <b>Profiler</b> turns your quiz answers (plus your KFED records) into one profile. " +
+         "<b>Retriever</b> runs real RAG search over KFED's actual programme catalogue. <b>Recommender</b> " +
+         "sequences the best-matching programmes into a Now/Next/Later pathway. <b>Progress Tracker</b> " +
+         "watches real programme deadlines on its own and raises alerts. <b>Escalation</b> scans every answer " +
+         "for complexity (large funding asks, disputes, distress, low KB confidence) and hands off to a human " +
+         "KFED advisor when needed.",
+    escalated: "This case was escalated to a human KFED advisor.",
+    footer: "Prototype built for the AI Entrepreneur Advisor challenge · RAG grounded in real KFED programme data (khalifafund.ae) · Not affiliated with an official KFED production system.",
+  },
+  ar: {
+    chatTitle: "المحادثة", pathwayTitle: "مسارك المقترح", alertsTitle: "فرص قادمة",
+    send: "إرسال", placeholder: "اطرح سؤالًا متابعًا أو شارك تحديثًا عن تقدمك…",
+    now: "الآن", next: "التالي", later: "لاحقًا", markDone: "تم الإنجاز", done: "مكتمل",
+    howBtn: "كيف يعمل هذا النظام؟", retake: "إعادة تعبئة استبيان الملف الشخصي", skip: "تخطي",
+    nextBtn: "التالي", finishBtn: "عرض مساري", quizIntro: "بضعة أسئلة سريعة قبل أن نوصي بمسار — هذه هي عملية بناء ملفك الشخصي.",
+    step: (a,b) => `الخطوة ${a} من ${b}`,
+    how: "يعمل 5 وكلاء معًا: <b>وكيل الملف الشخصي</b> يحوّل إجاباتك في الاستبيان (وسجلاتك لدى صندوق خليفة) إلى ملف واحد. " +
+         "<b>وكيل الاسترجاع</b> يبحث فعليًا (RAG) في كتالوج برامج صندوق خليفة الحقيقي. <b>وكيل التوصية</b> " +
+         "يرتب أفضل البرامج المطابقة ضمن مسار الآن/التالي/لاحقًا. <b>وكيل تتبع التقدم</b> " +
+         "يراقب المواعيد الحقيقية للبرامج من تلقاء نفسه ويصدر تنبيهات. <b>وكيل التصعيد</b> يفحص كل إجابة " +
+         "بحثًا عن التعقيد (طلبات تمويل كبيرة، نزاعات، ضيق، تغطية ضعيفة من قاعدة المعرفة) ويحوّل الحالة إلى مستشار بشري عند الحاجة.",
+    escalated: "تم تحويل هذه الحالة إلى مستشار بشري في صندوق خليفة.",
+    footer: "نموذج أولي لتحدي المستشار الذكي لرواد الأعمال · يعتمد الاسترجاع المعزز (RAG) على بيانات حقيقية من صندوق خليفة (khalifafund.ae) · غير تابع لنظام إنتاج رسمي لصندوق خليفة.",
+  }
+};
+
+function setLang(l) {
+  lang = l;
+  document.body.dir = (l === 'ar') ? 'rtl' : 'ltr';
+  document.getElementById('btnEn').classList.toggle('active', l === 'en');
+  document.getElementById('btnAr').classList.toggle('active', l === 'ar');
+  document.getElementById('chatTitle').innerText = T[l].chatTitle;
+  document.getElementById('pathwayTitle').innerText = T[l].pathwayTitle;
+  document.getElementById('alertsTitle').innerText = T[l].alertsTitle;
+  document.getElementById('sendBtn').innerText = T[l].send;
+  document.getElementById('input').placeholder = T[l].placeholder;
+  document.getElementById('howToggle').innerText = T[l].howBtn;
+  document.getElementById('retakeToggle').innerText = T[l].retake;
+  document.getElementById('footerText').innerText = T[l].footer;
+  document.getElementById('howBox').innerHTML = T[l].how;
+  document.getElementById('quizIntro').innerText = T[l].quizIntro;
+  document.getElementById('quizSkipBtn').innerText = T[l].skip;
+
+  // If we're mid-quiz, re-fetch the current question relocalized (resumable, no progress lost).
+  if (document.getElementById('quizWrap').style.display !== 'none') {
+    loadQuizState();
+  }
+}
+
+function toggleHow() {
+  const box = document.getElementById('howBox');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
+
+function beneficiaryIdVal() {
+  return document.getElementById('beneficiarySelect').value;
+}
+
+// ---------------- Quiz flow ----------------
+
+async function loadQuizState() {
+  beneficiaryId = beneficiaryIdVal();
+  const res = await fetch('/api/quiz/start', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({beneficiary_id: beneficiaryId, language: lang})
+  });
+  const data = await res.json();
+  if (data.quiz_complete) {
+    enterMainView(data, /*isResume=*/true);
+  } else {
+    showQuizView();
+    renderQuestion(data);
+  }
+}
+
+function showQuizView() {
+  document.getElementById('quizWrap').style.display = 'block';
+  document.getElementById('mainWrap').style.display = 'none';
+}
+
+function renderQuestion(data) {
+  currentQuestion = data.question;
+  multiSelections = [];
+  document.getElementById('quizStepLabel').innerText = T[lang].step(data.step, data.total_steps);
+  document.getElementById('quizProgressFill').style.width = Math.round((data.step - 1) / data.total_steps * 100) + '%';
+  document.getElementById('quizPrompt').innerText = currentQuestion.prompt;
+
+  const body = document.getElementById('quizBody');
+  body.innerHTML = '';
+  const nextBtn = document.getElementById('quizNextBtn');
+  const skipBtn = document.getElementById('quizSkipBtn');
+  skipBtn.style.visibility = currentQuestion.optional ? 'visible' : 'hidden';
+
+  if (currentQuestion.type === 'text') {
+    const input = document.createElement('input');
+    input.className = 'quizTextInput';
+    input.id = 'quizTextInput';
+    input.placeholder = lang === 'ar' ? 'اكتب إجابتك…' : 'Type your answer…';
+    input.onkeydown = (e) => { if (e.key === 'Enter') submitCurrentAnswer(); };
+    body.appendChild(input);
+    nextBtn.innerText = T[lang].nextBtn;
+    nextBtn.disabled = false;
+    setTimeout(() => input.focus(), 50);
+  } else if (currentQuestion.type === 'choice') {
+    currentQuestion.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'choiceBtn';
+      btn.innerText = opt.label;
+      btn.onclick = () => { submitAnswer(opt.value); };
+      body.appendChild(btn);
+    });
+    nextBtn.style.display = 'none';
+  } else if (currentQuestion.type === 'multichoice') {
+    nextBtn.style.display = 'inline-block';
+    currentQuestion.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'choiceBtn';
+      btn.innerText = opt.label;
+      btn.onclick = () => {
+        const idx = multiSelections.indexOf(opt.value);
+        if (idx >= 0) { multiSelections.splice(idx, 1); btn.classList.remove('selected'); }
+        else { multiSelections.push(opt.value); btn.classList.add('selected'); }
+      };
+      body.appendChild(btn);
+    });
+    nextBtn.innerText = T[lang].nextBtn;
+    nextBtn.disabled = false;
+  }
+  if (currentQuestion.type !== 'choice') nextBtn.style.display = 'inline-block';
+}
+
+function skipQuestion() {
+  if (currentQuestion.type === 'multichoice') { submitAnswer([]); }
+  else { submitAnswer(''); }
+}
+
+function submitCurrentAnswer() {
+  if (currentQuestion.type === 'text') {
+    const val = document.getElementById('quizTextInput').value.trim();
+    if (!val && !currentQuestion.optional) return;
+    submitAnswer(val);
+  } else if (currentQuestion.type === 'multichoice') {
+    submitAnswer(multiSelections.slice());
+  }
+}
+
+async function submitAnswer(answer) {
+  const res = await fetch('/api/quiz/answer', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({beneficiary_id: beneficiaryId, question_id: currentQuestion.question_id, answer, language: lang})
+  });
+  const data = await res.json();
+  if (data.quiz_complete) {
+    enterMainView(data, false);
+  } else {
+    renderQuestion(data);
+  }
+}
+
+async function retakeQuiz() {
+  await fetch('/api/quiz/restart', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({beneficiary_id: beneficiaryId})
+  });
+  document.getElementById('messages').innerHTML = '';
+  loadQuizState();
+}
+
+function enterMainView(data, isResume) {
+  document.getElementById('quizWrap').style.display = 'none';
+  document.getElementById('mainWrap').style.display = 'block';
+  if (data.language) setLang(data.language);
+  if (!isResume && data.reply) {
+    addMessage(data.reply, 'bot');
+    if (data.escalation) {
+      const div = document.createElement('div');
+      div.className = 'msg escalation';
+      div.innerHTML = `<b>${T[lang].escalated}</b><br>${data.escalation.reason_text}`;
+      document.getElementById('messages').appendChild(div);
+    }
+    document.getElementById('trace').innerText =
+      'Agents run: Profiler(quiz) → Escalation → Retriever(RAG, ' + (data.retrieved || []).length + ' hits) → Recommender → Tracker'
+      + (data.llm_live ? ' · LLM: live' : ' · LLM: not configured (template mode)');
+  }
+  renderPathway(data.pathway);
+  renderAlerts(data.alerts || []);
+}
+
+// ---------------- Chat (post-profiling follow-ups) ----------------
+
+function addMessage(text, cls) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + cls;
+  div.innerText = text;
+  document.getElementById('messages').appendChild(div);
+  document.getElementById('messages').scrollTop = 999999;
+}
+
+async function send() {
+  const input = document.getElementById('input');
+  const text = input.value.trim();
+  if (!text) return;
+  addMessage(text, 'user');
+  input.value = '';
+
+  const res = await fetch('/api/chat', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({beneficiary_id: beneficiaryId, message: text})
+  });
+  const data = await res.json();
+
+  if (data.language) setLang(data.language);
+  addMessage(data.reply, 'bot');
+
+  if (data.escalation) {
+    const div = document.createElement('div');
+    div.className = 'msg escalation';
+    div.innerHTML = `<b>${T[lang].escalated}</b><br>${data.escalation.reason_text}`;
+    document.getElementById('messages').appendChild(div);
+  }
+
+  document.getElementById('trace').innerText =
+    'Agents run: Profiler → Escalation → Retriever(RAG, ' + data.retrieved.length + ' hits) → Recommender → Tracker'
+    + (data.llm_live ? ' · LLM: live' : ' · LLM: not configured (template mode)');
+
+  renderPathway(data.pathway);
+  renderAlerts(data.alerts);
+}
+
+function renderAlerts(alerts) {
+  const card = document.getElementById('alertsCard');
+  const box = document.getElementById('alerts');
+  if (!alerts || alerts.length === 0) { card.style.display = 'none'; return; }
+  card.style.display = 'block';
+  box.innerHTML = '';
+  alerts.forEach(a => {
+    const div = document.createElement('div');
+    div.className = 'alertBox';
+    div.innerText = lang === 'ar' ? a.ar : a.en;
+    box.appendChild(div);
+  });
+}
+
+function renderPathway(pathway) {
+  const box = document.getElementById('pathway');
+  box.innerHTML = '';
+  if (!pathway || pathway.length === 0) {
+    box.innerHTML = '<span style="font-size:13px;color:#9099ab">No matching programmes yet.</span>';
+    return;
+  }
+  pathway.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'pathItem bucket-' + item.bucket;
+    const name = lang === 'ar' ? item.name_ar : item.name_en;
+    const desc = lang === 'ar' ? item.description_ar : item.description_en;
+    const tag = T[lang][item.bucket];
+    const status = item.milestone_status === 'completed' ? T[lang].done : tag;
+    div.innerHTML = `
+      <div class="name">${name}</div>
+      <div class="tag">${status} · score ${item.relevance_score}</div>
+      <div class="desc">${desc.slice(0,160)}...</div>
+      <div class="row">
+        <a href="${item.url}" target="_blank">khalifafund.ae ↗</a>
+        <button class="doneBtn" onclick="markDone('${item.program_id}')">${T[lang].markDone}</button>
+      </div>`;
+    box.appendChild(div);
+  });
+}
+
+async function markDone(programId) {
+  await fetch('/api/progress', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({beneficiary_id: beneficiaryId, program_id: programId, status: 'completed'})
+  });
+  const res = await fetch('/api/beneficiary/' + beneficiaryId);
+  const data = await res.json();
+  renderPathway(data.pathway);
+}
+
+document.getElementById('beneficiarySelect').addEventListener('change', () => {
+  document.getElementById('messages').innerHTML = '';
+  loadQuizState();
+});
+
+setLang('en');
+loadQuizState();
+</script>
+</body>
+</html>
